@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "hiroshifujita.com themes project.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "author": "Hiroshi Fujita",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "autoprefixer": "^6.7.2",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^6.1.3",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-lint": "^1.4.0"
+  }
+}
