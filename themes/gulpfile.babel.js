@@ -20,7 +20,14 @@ gulp.task('sass', () => {
         sassPath + 'style.scss'
     ];
     return gulp.src(target)
-        .pipe($.sassLint())
+        .pipe($.sassLint({
+            options: {
+                formatter: 'stylish',
+            },
+            rules: {
+                'no-css-comments': 0
+            }
+        }))
         .pipe($.sassLint.format())
         .pipe($.sassLint.failOnError())
         .pipe($.sass({
