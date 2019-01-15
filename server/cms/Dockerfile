@@ -11,7 +11,7 @@ RUN pecl install mcrypt-1.0.1 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
 # Wordpress Core Files
-ENV WORDPRESS_VERSION 5.0.2
+ENV WORDPRESS_VERSION 5.0.3
 RUN curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}-ja.tar.gz"
 RUN tar -xzf wordpress.tar.gz
 RUN rm wordpress.tar.gz
@@ -62,6 +62,7 @@ RUN rm contact-form-7.zip
 # Copy index/access files
 COPY index.php /var/www/html/index.php
 COPY .htaccess /var/www/html/.htaccess
+COPY wp-config.php /var/www/html/cms/wp-config.php
 
 # Add directory for media files
 # ADD ./uploads /var/www/html/cms/wp-content/uploads
@@ -69,6 +70,7 @@ COPY .htaccess /var/www/html/.htaccess
 # Change owner
 RUN chown www-data. /var/www/html/index.php
 RUN chown www-data. /var/www/html/.htaccess
+RUN chown www-data. /var/www/html/cms/wp-config.php
 # RUN chown www-data. -R /var/www/html/cms/wp-content/uploads
 
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data

@@ -1,7 +1,4 @@
 <?php
-set_include_path(get_include_path().PATH_SEPARATOR.dirname(__FILE__));
-include_once 'config/defines.php';
-
 add_theme_support('post-thumbnails', array('post', 'page'));
 add_theme_support('menus');
 add_theme_support('automatic-feed-links');

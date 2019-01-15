@@ -122,17 +122,9 @@
 ?>
   </head>
   <body>
-<?php
-	echo get_template_part('parts/social/google', 'script');
-	echo get_template_part('parts/social/facebook', 'script');
-	echo get_template_part('parts/social/twitter', 'script');
-	echo get_template_part('parts/social/hatena', 'script');
-	echo get_template_part('parts/social/line', 'script');
-?>
     <header>
-      <div>
-        <h1><a　href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
-		<div><span><?php echo get_bloginfo('description'); ?></span></div>
+      <div class="header__inner">
+        <h1 class="title"><a class="link" href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
       </div>
     </header>
     <div>
