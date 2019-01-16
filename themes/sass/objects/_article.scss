@@ -1,0 +1,39 @@
+.article {
+  position: relative;
+}
+
+.article__header {
+  position: relative;
+
+  .title {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1;
+  }
+}
+
+.article__content {
+  padding: 64px 0 0;
+  position: relative;
+
+  p {
+    color: $color-black-1;
+    font-size: 14px;
+    line-height: 1.75;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 16px;
+    line-height: 1.75;
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+
+  h3 {
+    font-size: 14px;
+    line-height: 1.75;
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+}

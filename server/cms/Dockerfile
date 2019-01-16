@@ -18,13 +18,6 @@ RUN rm wordpress.tar.gz
 RUN mv /var/www/html/wordpress /var/www/html/cms
 RUN chown -R www-data:www-data /var/www/html/cms
 
-ENV BREADCRUMB_NAVXT_VERSION 6.2.1
-RUN curl -o breadcrumb-navxt.zip -fSL "https://downloads.wordpress.org/plugin/breadcrumb-navxt.${BREADCRUMB_NAVXT_VERSION}.zip"
-RUN unzip breadcrumb-navxt.zip
-RUN cp -r breadcrumb-navxt /var/www/html/cms/wp-content/plugins/
-RUN rm -rf breadcrumb-navxt/
-RUN rm breadcrumb-navxt.zip
-
 ENV AKISMET_ANTI_SPAM_VERSION 4.1
 RUN curl -o akismet.zip -fSL "https://downloads.wordpress.org/plugin/akismet.${AKISMET_ANTI_SPAM_VERSION}.zip"
 RUN unzip akismet.zip

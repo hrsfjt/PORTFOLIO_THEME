@@ -1,0 +1,68 @@
+.form-content {
+  padding-top: 32px;
+  position: relative;
+}
+
+.form-item {
+  padding: 0 0 16px;
+  position: relative;
+}
+
+.form-title {
+  font-size: 14px;
+  line-height: 1.75;
+  padding-bottom: 8px;
+  position: relative;
+  text-align: left;
+}
+
+.form-data {
+  position: relative;
+  text-align: left;
+}
+
+.form-submit {
+  position: relative;
+  text-align: left;
+
+  .submit {
+    background-color: #4d4d4d;
+    border: 1px solid #dddddd;
+    color: $color-white-1;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+.input-item {
+  border: 1px solid #ddd;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 400px;
+  padding: 2px 4px;
+  width: 90%;
+}
+
+.input-textarea {
+  border: 1px solid #ddd;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 400px;
+  padding: 2px 4px;
+  resize: none;
+  width: 90%;
+}
+
+.wpcf7-not-valid-tip {
+  padding-top: 8px;
+}
+
+.require {
+  background-color: #ff0000;
+  border-radius: 3px;
+  color: $color-white-1;
+  font-size: 12px;
+  margin-left: 8px;
+  padding: 3px;
+}

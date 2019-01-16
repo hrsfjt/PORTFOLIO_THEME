@@ -132,10 +132,13 @@ sub {
 input,
 textarea,
 select {
+  appearance: none;
+  border: 0;
   box-sizing: border-box;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  padding: 0;
 }
 
 table {
