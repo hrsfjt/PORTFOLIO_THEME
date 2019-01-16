@@ -1,0 +1,13 @@
+.container {
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+.container__inner {
+  margin: 0 auto;
+  max-width: $width-pc;
+  padding: 72px 0 48px;
+  position: relative;
+  width: 90%;
+}
