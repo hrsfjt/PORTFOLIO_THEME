@@ -1,5 +1,5 @@
 // width
-$width-pc: 1024px;
+$width-pc: 960px;
 $width-tab: 768px;
 $width-middle: 550px;
 $width-sp: 320px;
@@ -11,10 +11,3 @@ $width-limit-sp: $width-middle - 1px;
 // color
 $color-black-1: #222;
 $color-white-1: #fff;
-
-// z-index
-$z-index-container: 1;
-$z-index-header: 2;
-$z-index-footer: 2;
-$z-index-content: 3;
-$z-index-article: 3;

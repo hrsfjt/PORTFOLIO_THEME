@@ -32,12 +32,12 @@ function custom_widgets_init() {
   if (function_exists('register_sidebar')) :
     register_sidebar(
       array(
-        'name' => 'prime-sidebar',
-        'id' => 'sidebar-prime',
-        'description' => 'MAIN SIDEBAR',
-        'before_widget' => '<div class="sidebar__widget">',
+        'name' => 'SIDE MENU',
+        'id' => 'side-menu',
+        'description' => 'SIDE MENU',
+        'before_widget' => '<div class="header__menu">',
         'after_widget' => '</div>',
-        'before_title' => '<h2 class="sidebar__header title__sidebar">',
+        'before_title' => '<h2 class="title">',
         'after_title' => '</h2>'
       )
     );

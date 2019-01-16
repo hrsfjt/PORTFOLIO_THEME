@@ -119,6 +119,18 @@
 		wp_enqueue_script('comment-reply');
 	}
 	wp_head();
+	$args = array(
+		'menu' => 'HEADER MENU LIST',
+		'menu_class' => 'list',
+		'menu_id' => 'header-menu-list',
+		'container' => 'nav',
+		'container_class' => 'header__navigation',
+		'before' => '',
+		'after' => '',
+		'link_before' => '',
+		'link_after' => '',
+		'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>'
+	);
 ?>
   </head>
   <body>
@@ -126,6 +138,7 @@
       <div class="header__inner">
         <h1 class="title"><a class="link" href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
       </div>
+	  <?php wp_nav_menu($args); ?>
     </header>
-    <div>
-      <div>
+    <div class="container">
+      <div class="container__inner">
