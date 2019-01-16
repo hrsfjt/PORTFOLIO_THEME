@@ -5,8 +5,10 @@
 }
 
 .container__inner {
+  height: auto;
   margin: 0 auto;
   max-width: $width-pc;
+  min-height: 600px;
   padding: 72px 0 48px;
   position: relative;
   width: 90%;
