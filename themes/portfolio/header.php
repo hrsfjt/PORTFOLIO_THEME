@@ -140,5 +140,14 @@
       </div>
 	  <?php wp_nav_menu($args); ?>
     </header>
+<?php
+if (is_front_page() || is_home()) {
+?>
+	<div class="visual-image">
+  		<div class="image image-front-view" style="background-image:url('img/view.jpg');"></div>
+	</div>
+<?php
+}
+?>
     <div class="container">
       <div class="container__inner">
