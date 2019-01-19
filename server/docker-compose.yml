@@ -6,6 +6,7 @@ services:
       - '8080:80'
     volumes:
       - ../themes/portfolio:/var/www/html/cms/wp-content/themes/portfolio
+      - ../themes/img:/var/www/html/img
     links:
       - cmsdb:cmsdb
     container_name: wp-srv

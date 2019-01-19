@@ -1,0 +1,33 @@
+@mixin image_base() {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image {
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+.visual-image {
+  height: 320px;
+  padding-top: 56px;
+  position: relative;
+  width: 100%;
+}
+
+.image-front-view {
+  @include image_base();
+  height: 320px;
+}
+
+.content-archive {
+  position: relative;
+
+  & > .title {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1;
+  }
+}

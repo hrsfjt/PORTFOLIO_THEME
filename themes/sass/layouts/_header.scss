@@ -8,6 +8,7 @@
 
   .title {
     font-size: 24px;
+    font-weight: normal;
 
     .link {
       color: $color-black-1;
@@ -33,7 +34,7 @@
         color: $color-black-1;
       }
 
-      &.current_page_item {
+      &.current-menu-item {
         a {
           color: #999999;
         }

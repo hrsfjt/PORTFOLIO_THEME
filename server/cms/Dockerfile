@@ -65,5 +65,7 @@ RUN chown www-data. /var/www/html/index.php
 RUN chown www-data. /var/www/html/.htaccess
 RUN chown www-data. /var/www/html/cms/wp-config.php
 # RUN chown www-data. -R /var/www/html/cms/wp-content/uploads
+RUN mkdir /var/www/html/img
+RUN chown www-data. /var/www/html/img
 
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
