@@ -16,28 +16,25 @@
   }
 }
 
-.header__navigation {
+.header__navigation-list {
+  display: flex;
+  justify-content: flex-end;
   margin: 0 auto;
   max-width: $width-pc;
   width: 90%;
 
-  .list {
-    display: flex;
-    justify-content: flex-end;
+  .menu-item {
+    flex: 0 0 auto;
+    font-size: 14px;
+    width: 100px;
 
-    .menu-item {
-      flex: 0 0 auto;
-      font-size: 14px;
-      width: 100px;
+    a {
+      color: $color-black-1;
+    }
 
+    &.current-menu-item {
       a {
-        color: $color-black-1;
-      }
-
-      &.current-menu-item {
-        a {
-          color: #999999;
-        }
+        color: #999999;
       }
     }
   }
