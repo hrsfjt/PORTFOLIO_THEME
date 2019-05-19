@@ -18,7 +18,7 @@ RUN rm wordpress.tar.gz
 RUN mv /var/www/html/wordpress /var/www/html/cms
 RUN chown -R www-data:www-data /var/www/html/cms
 
-ENV AKISMET_ANTI_SPAM_VERSION 4.1.1
+ENV AKISMET_ANTI_SPAM_VERSION 4.1.2
 RUN curl -o akismet.zip -fSL "https://downloads.wordpress.org/plugin/akismet.${AKISMET_ANTI_SPAM_VERSION}.zip"
 RUN unzip akismet.zip
 RUN cp -r akismet /var/www/html/cms/wp-content/plugins/
@@ -45,7 +45,7 @@ RUN cp -r wp-multibyte-patch /var/www/html/cms/wp-content/plugins/
 RUN rm -rf wp-multibyte-patch/
 RUN rm wp-multibyte-patch.zip
 
-ENV CONTACT_FORM_VERSION 5.1.1
+ENV CONTACT_FORM_VERSION 5.1.2
 RUN curl -o contact-form-7.zip -fSL "https://downloads.wordpress.org/plugin/contact-form-7.${CONTACT_FORM_VERSION}.zip"
 RUN unzip contact-form-7.zip
 RUN cp -r contact-form-7 /var/www/html/cms/wp-content/plugins/
