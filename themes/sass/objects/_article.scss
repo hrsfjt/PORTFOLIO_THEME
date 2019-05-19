@@ -46,6 +46,12 @@
   }
 }
 
+@media (max-width: $width-middle) {
+  .article__content {
+    padding: 24px 0 0;
+  }
+}
+
 .wp-block-image {
   margin-bottom: 64px;
   margin-top: 64px;

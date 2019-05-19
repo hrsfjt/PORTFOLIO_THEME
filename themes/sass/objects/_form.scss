@@ -2,6 +2,15 @@
   display: inline-block;
 }
 
+@media (max-width: $width-middle) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+  }
+}
+
 .wpcf7-form-control-wrap {
   display: block;
   text-align: left;
@@ -38,7 +47,19 @@
 }
 
 .form__acceptance {
-  padding: 0 0 16px;
+  padding: 0 0 24px;
+
+  input {
+    border: 1px solid #ddd;
+    height: 12px;
+    margin: 0 8px 0 0;
+    outline: none;
+    width: 12px;
+
+    &:checked {
+      background-color: #ff0000;
+    }
+  }
 }
 
 .wpcf7-list-item {
