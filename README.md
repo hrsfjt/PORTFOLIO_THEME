@@ -19,3 +19,11 @@ PORTFOLIO_THEME Repository.
     ├── portfolio
     └── sass
 ```
+
+## fix package
+
+```shell
+$ rm -rf themes/node_modules/node-gyp/node_modules/tar
+$ npm dedupe
+success.
+```
