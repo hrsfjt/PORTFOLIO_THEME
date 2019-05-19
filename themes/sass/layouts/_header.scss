@@ -18,6 +18,7 @@
 
 .header__navigation-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   margin: 0 auto;
   max-width: $width-pc;
@@ -26,6 +27,7 @@
   .menu-item {
     flex: 0 0 auto;
     font-size: 14px;
+    line-height: 2;
     width: 100px;
 
     a {
@@ -35,6 +37,35 @@
     &.current-menu-item {
       a {
         color: #999999;
+      }
+    }
+  }
+}
+
+@media (max-width: $width-middle) {
+  .header__navigation-list {
+    justify-content: center;
+
+    .menu-item {
+      border-left: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      flex: 1 1 auto;
+      line-height: 3.5;
+
+      &:nth-of-type(3n) {
+        border-right: 1px solid #ddd;
+      }
+
+      &:nth-of-type(4n) {
+        border-bottom: 1px solid #ddd;
+      }
+
+      &:nth-of-type(5n) {
+        border-bottom: 1px solid #ddd;
+      }
+
+      &:last-child {
+        border-right: 1px solid #ddd;
       }
     }
   }
