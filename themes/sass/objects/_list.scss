@@ -7,3 +7,44 @@
 .list--archive {
   padding: 64px 0 0;
 }
+
+.list--articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.list__item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 80px;
+  width: 220px + 20px;
+
+  .title {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 14px;
+    padding: 36px 0 0;
+    text-align: left;
+  }
+}
+
+.item__thumbnail {
+  background-color: #ddd;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 220px;
+  position: relative;
+  width: 220px;
+}
+
+.thumbnail-link {
+  display: block;
+  height: 100%;
+  position: relative;
+}

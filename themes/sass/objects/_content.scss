@@ -33,3 +33,23 @@
 .link {
   color: $color-black-1;
 }
+
+.image--front {
+  background-color: #ddd;
+  height: 80px;
+  position: relative;
+  width: 100%;
+}
+
+.content-front {
+  padding-top: 40px;
+  position: relative;
+
+  .title {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 2;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+}

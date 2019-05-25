@@ -12,7 +12,7 @@
     <section>
       <div class="content">
         <h1 class="content__title"><a class="link" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h1>
-        <div class="content__date"><?php the_date(); ?></div>
+        <div class="content__date"><?php echo get_the_date(); ?></div>
       </div>
     </section>
 <?php
