@@ -36,7 +36,11 @@
 
 .image--front {
   background-color: #ddd;
-  height: 80px;
+  background-image: url('img/header.jpeg');
+  background-position: center 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
   position: relative;
   width: 100%;
 }
