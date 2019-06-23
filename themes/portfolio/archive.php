@@ -1,26 +1,32 @@
 <?php
-  get_header();
+get_header();
 ?>
-<div class="content-archive">
-  <h1 class="title title--archive"><?php single_cat_title('', true); ?></h1>
-  <div class="list list--archive">
-<?php
-  if (have_posts()) {
-    while (have_posts()) {
-      the_post();
-?>
-    <section>
+<div class="page">
+  <header class="header">
+    <h1 class="title">BLOG</h1>
+  </header>
+  <div class="content">
+    <?php
+    if (have_posts()) {
+      while (have_posts()) {
+        the_post();
+        $image_url = get_the_post_thumbnail_url($post->ID, 'full');
+    ?>
+    <section class="archive">
+      <header class="header">
+        <h2 class="title"><a href="<?php echo get_the_permalink() ?>"><?php echo get_the_title(); ?></a></h2>
+      </header>
       <div class="content">
-        <h1 class="content__title"><a class="link" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h1>
-        <div class="content__date"><?php echo get_the_date(); ?></div>
+        <?php the_content(); ?>
       </div>
     </section>
-<?php
+    <?php
       }
     }
-?>
+    ?>
   </div>
+  <?php echo get_template_part('content/pager', 'archive'); ?>
 </div>
 <?php
-  get_footer();
+get_footer();
 ?>
