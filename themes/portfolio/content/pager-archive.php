@@ -1,7 +1,7 @@
 <?php
-  $prev_link = get_previous_posts_link('< 前へ');
-  $next_link = get_next_posts_link('次へ >');
-  if (isset($prev_link) or isset($next_link)) {
+  $prev_link = get_previous_posts_link('＜ 次の記事');
+  $next_link = get_next_posts_link('前の記事 ＞');
+  if (isset($prev_link) || isset($next_link)) {
 ?>
 <ul class="pager pager--archive">
 <?php

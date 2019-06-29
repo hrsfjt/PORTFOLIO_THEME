@@ -9,7 +9,6 @@
 }
 
 .image--front {
-  background-color: #ddd;
   background-image: url('img/header.jpeg');
   background-position: center 0px;
   background-repeat: no-repeat;
@@ -29,5 +28,18 @@
     line-height: 2;
     margin-bottom: 32px;
     text-align: center;
+  }
+}
+
+.tags {
+  padding: 32px 0 0;
+  text-align: right;
+
+  .tags-item {
+    background-color: #cccccc;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 4px 8px;
   }
 }
