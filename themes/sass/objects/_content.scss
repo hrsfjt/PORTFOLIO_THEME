@@ -9,7 +9,7 @@
 }
 
 .image--front {
-  background-image: url('img/header.jpeg');
+  background-image: url("img/header.jpeg");
   background-position: center 0px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,6 +39,7 @@
     background-color: #cccccc;
     border-radius: 4px;
     color: #ffffff;
+    display: inline-block;
     font-size: 14px;
     padding: 4px 8px;
   }
