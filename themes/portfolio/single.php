@@ -15,7 +15,7 @@ if (have_posts()) {
   <footer>
       <?php
 $tags = get_the_tags($post->ID);
-        if (isset($tags)) {
+        if ($tags) {
             ?>
     <div class="tags">
       <?php
