@@ -2,28 +2,34 @@
 
 PORTFOLIO_THEME Repository.
 
-## File/Directory Architecture
+## ENVIRONMENT
+
+* Node v10.0.0
+* npm v6.9.0
+
+## FILE/DIRECTORY ARCHITECTURE
 
 ``` text
 .
 ├── LICENSE
 ├── README.md
+├── deploy.sh
 ├── server
 │   ├── cms
-│   ├── db
-│   └── docker-compose.yml
+│   ├── docker-compose.yml
+│   └── mysql
 └── themes
     ├── gulpfile.babel.js
+    ├── img
     ├── package-lock.json
     ├── package.json
     ├── portfolio
     └── sass
 ```
 
-## fix package
+## DEPLOY
 
-```shell
-$ rm -rf themes/node_modules/node-gyp/node_modules/tar
-$ npm dedupe
-success.
+``` bash
+$ ./deploy.sh
+yyyy/mm/dd HH:MM:SS deploy success.
 ```
