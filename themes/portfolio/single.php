@@ -13,24 +13,12 @@ if (have_posts()) {
     <?php the_content();?>
   </div>
   <footer>
-      <?php
-$tags = get_the_tags($post->ID);
+      <?php $tags = get_the_tags($post->ID);
         if ($tags) {
+            $tagSize = count($tags);
             ?>
-    <div class="tags">
-      <?php
-for ($i = 0; $i < count($tags); $i++) {
-                $name = $tags[$i]->name;
-                $slug = $tags[$i]->slug;
-                ?>
-        <a class="tags-item" href="<?php echo esc_url(home_url() . "/tag/" . $slug); ?>"><?php echo $name; ?></a>
-        <?php
-}
-            ?>
-    </div>
-    <?php
-}
-        ?>
+    <div class="tags">tags: <?php for ($i = 0; $i < $tagSize; $i++) {?><a class="tags-item" href="<?php echo esc_url(home_url() . "/tag/" . $tags[$i]->slug); ?>"><?php echo $tags[$i]->name; ?></a><?php if ($i !== ($tagSize - 1)) {echo ", ";}}?></div>
+    <?php }?>
     <?php
 if (get_next_post() || get_previous_post()) {
             ?>

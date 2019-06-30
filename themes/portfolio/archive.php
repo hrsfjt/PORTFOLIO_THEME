@@ -3,7 +3,7 @@ get_header();
 ?>
 <div class="page">
   <header class="header">
-    <h1 class="title">BLOG</h1>
+    <h1 class="title"><?php single_cat_title(); ?></h1>
   </header>
   <div class="content">
     <?php
