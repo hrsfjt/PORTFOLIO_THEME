@@ -9,3 +9,4 @@ server/mysql/*
 *.zip
 *.log
 .version
+.env

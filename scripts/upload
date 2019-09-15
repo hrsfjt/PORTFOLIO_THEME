@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(
+  cd $(dirname $0)
+  pwd
+)"
+
+. .env
+
+cd $SCRIPT_DIR/../themes
+scp -F ~/.ssh/config -r $THEME_NAME/* $SSH_HOST:$HOME_DIR/srv/cms/$THEME_NAME
