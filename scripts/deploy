@@ -3,18 +3,15 @@ SCRIPT_DIR="$(
   cd $(dirname $0)
   pwd
 )"
+cd $SCRIPT_DIR
 
-if [ ! -e "$SCRIPT_DIR/.version" ]; then
-  touch $SCRIPT_DIR/.version
-  echo "1.0.0" >$SCRIPT_DIR/.version
-  echo "check .version file"
-  exit
-fi
+. functions.sh
 
-. $SCRIPT_DIR/.env
+check_env
+check_version
 
-CURRENT_VERSION=`cat $SCRIPT_DIR/.version`
-NEXT_VERSION=`cat $SCRIPT_DIR/../themes/sass/style.scss | awk '/Version/{printf $3}'`
+CURRENT_VERSION=$(cat $SCRIPT_DIR/.version)
+NEXT_VERSION=$(cat $SCRIPT_DIR/../themes/sass/style.scss | awk '/Version/{printf $3}')
 if [ $CURRENT_VERSION = $NEXT_VERSION ]; then
   echo "different version required. CURRENT: $CURRENT_VERSION, NEXT: $NEXT_VERSION"
   exit
@@ -24,22 +21,13 @@ fi
 cd $SCRIPT_DIR/../themes
 
 # package.jsonバージョン更新
-PACKAGE_VERSION=`cat package.json | jq -r .version`
+PACKAGE_VERSION=$(cat package.json | jq -r .version)
 sed -i "" -e "s/\"version\": \"$PACKAGE_VERSION\"/\"version\": \"$NEXT_VERSION\"/g" package.json
 
 # CSSファイル更新
 npm run build
 
-# ZIP圧縮
-zip -r -q $SCRIPT_DIR/$THEME_NAME.zip $THEME_NAME
-echo "$THEME_NAME.zip created."
-
 # 実行記録
-if [ ! -e "$SCRIPT_DIR/deploy.log" ]; then
-  touch $SCRIPT_DIR/deploy.log
-fi
-echo `date '+%Y/%m/%d %H:%M:%S'`" "$NEXT_VERSION >>$SCRIPT_DIR/deploy.log
-
-echo -n $NEXT_VERSION >.version
+/bin/echo -n $NEXT_VERSION >$SCRIPT_DIR/.version
 
 echo "deploy success."
