@@ -1,5 +1,4 @@
 #!/bin/bash
-
 SCRIPT_DIR="$(
   cd $(dirname $0)
   pwd
@@ -12,9 +11,7 @@ if [ ! -e "$SCRIPT_DIR/.version" ]; then
   exit
 fi
 
-cd $SCRIPT_DIR
-
-. .env
+. $SCRIPT_DIR/.env
 
 CURRENT_VERSION=`cat $SCRIPT_DIR/.version`
 NEXT_VERSION=`cat $SCRIPT_DIR/../themes/sass/style.scss | awk '/Version/{printf $3}'`
