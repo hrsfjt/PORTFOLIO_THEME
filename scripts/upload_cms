@@ -7,5 +7,7 @@ cd $SCRIPT_DIR
 
 . functions.sh
 
+check_env
+
 cd $SCRIPT_DIR/../server/cms
 scp -F ~/.ssh/config Dockerfile $SSH_HOST:$HOME_DIR/srv/cms/Dockerfile
