@@ -11,7 +11,7 @@ RUN pecl install mcrypt-1.0.2 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
 # Wordpress Core Files
-ENV WORDPRESS_VERSION 5.2.2
+ENV WORDPRESS_VERSION 5.2.3
 RUN curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}-ja.tar.gz"
 RUN tar -xzf wordpress.tar.gz
 RUN rm wordpress.tar.gz
@@ -25,7 +25,7 @@ RUN cp -r akismet /var/www/html/cms/wp-content/plugins/
 RUN rm -rf akismet/
 RUN rm akismet.zip
 
-ENV BACK_WP_UP_VERSION 3.6.9
+ENV BACK_WP_UP_VERSION 3.6.10
 RUN curl -o backwpup.zip -fSL "https://downloads.wordpress.org/plugin/backwpup.${BACK_WP_UP_VERSION}.zip"
 RUN unzip backwpup.zip
 RUN cp -r backwpup /var/www/html/cms/wp-content/plugins/
@@ -45,7 +45,7 @@ RUN cp -r wp-multibyte-patch /var/www/html/cms/wp-content/plugins/
 RUN rm -rf wp-multibyte-patch/
 RUN rm wp-multibyte-patch.zip
 
-ENV CONTACT_FORM_VERSION 5.1.3
+ENV CONTACT_FORM_VERSION 5.1.4
 RUN curl -o contact-form-7.zip -fSL "https://downloads.wordpress.org/plugin/contact-form-7.${CONTACT_FORM_VERSION}.zip"
 RUN unzip contact-form-7.zip
 RUN cp -r contact-form-7 /var/www/html/cms/wp-content/plugins/

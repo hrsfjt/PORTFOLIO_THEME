@@ -1,0 +1,11 @@
+#!/bin/bash
+SCRIPT_DIR="$(
+  cd $(dirname $0)
+  pwd
+)"
+cd $SCRIPT_DIR
+
+. functions.sh
+
+cd $SCRIPT_DIR/../server/cms
+scp -F ~/.ssh/config Dockerfile $SSH_HOST:$HOME_DIR/srv/cms/Dockerfile
