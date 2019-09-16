@@ -1,6 +1,6 @@
 # PORTFOLIO_THEME
 
-PORTFOLIO_THEME Repository.
+PORTFOLIO_THEME
 
 ## ENVIRONMENT
 
@@ -13,23 +13,16 @@ PORTFOLIO_THEME Repository.
 .
 ├── LICENSE
 ├── README.md
-├── deploy.sh
+├── scripts
 ├── server
-│   ├── cms
-│   ├── docker-compose.yml
-│   └── mysql
 └── themes
-    ├── gulpfile.babel.js
-    ├── img
-    ├── package-lock.json
-    ├── package.json
-    ├── portfolio
-    └── sass
 ```
 
 ## DEPLOY
 
 ``` bash
-$ ./deploy.sh
-yyyy/mm/dd HH:MM:SS deploy success.
+# ビルド
+$ sh scripts/deploy
+# アップロード
+$ sh scripts/upload_theme
 ```
