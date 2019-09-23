@@ -10,8 +10,7 @@ services:
     links:
       - mysql:mysql
     container_name: wordpress
-    hostname: wordpress
-  mysql:
+  cmsdb:
     image: mysql:latest
     ports:
       - '3306:3306'
@@ -21,8 +20,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secrets
-      MYSQL_DATABASE: wp_db
-      MYSQL_USER: wp_user
+      MYSQL_DATABASE: cms_db
+      MYSQL_USER: cms_user
       MYSQL_PASSWORD: secrets
-    container_name: mysql
-    hostname: mysql
+    container_name: cmsdb

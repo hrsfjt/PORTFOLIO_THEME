@@ -61,6 +61,9 @@ $theme_info = wp_get_theme();
 ?>
   <head>
 		<!-- version <?php echo $theme_info->get('Version'); ?> -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GOOGLE_ANALYTICS_ID; ?>"></script>
+        <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-92967977-1');</script>
 		<meta charset="<?php echo get_bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="keywords" content="hiroshi blog,hiroshifujita,hiroshifujita.com,hiroshi,blog,fujita">
@@ -72,8 +75,7 @@ $theme_info = wp_get_theme();
 		<meta property="og:image" content="<?php echo $ogp_image; ?>">
 		<meta property="og:locale" content="ja_JP">
 		<meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>">
-		<meta property="fb:app_id" content="<?php echo FB_APP_ID ?>">
-		<meta name="google-site-verification" content="<?php echo GOOGLE_SITE_IDENTITY ?>">
+		<meta property="fb:app_id" content="<?php echo FB_APP_ID; ?>">
 		<meta name="msapplication-TileColor" content="#437cb5">
 		<meta name="msapplication-TileImage" content="<?php echo $favicon_path; ?>/mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
@@ -133,7 +135,7 @@ $args = array(
     'menu_id' => 'header-navigation',
     'container' => 'nav',
     'container_class' => 'header__navigation',
-		'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>'
+    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 );
 wp_nav_menu($args);
 ?>

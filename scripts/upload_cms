@@ -9,5 +9,11 @@ cd $SCRIPT_DIR
 
 check_env
 
+sed -i "" -e "s/'GOOGLE_ANALYTICS_ID', ''/'GOOGLE_ANALYTICS_ID', '$GOOGLE_ANALYTICS_ID'/g" $SCRIPT_DIR/../server/cms/wp-config.php
+sed -i "" -e "s/'FB_APP_ID', ''/'FB_APP_ID', '$FB_APP_ID'/g" $SCRIPT_DIR/../server/cms/wp-config.php
+
 cd $SCRIPT_DIR/../server/cms
+scp -F ~/.ssh/config .htaccess $SSH_HOST:$HOME_DIR/srv/cms/.htaccess
 scp -F ~/.ssh/config Dockerfile $SSH_HOST:$HOME_DIR/srv/cms/Dockerfile
+scp -F ~/.ssh/config wp-config.php $SSH_HOST:$HOME_DIR/srv/cms/wp-config.php
+echo "upload success."
