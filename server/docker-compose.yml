@@ -1,6 +1,6 @@
 version: '2'
 services:
-  wordpress:
+  cms:
     build: ./cms
     ports:
       - '8080:80'
@@ -8,8 +8,8 @@ services:
       - ../themes/portfolio:/var/www/html/cms/wp-content/themes/portfolio
       - ../themes/img:/var/www/html/img
     links:
-      - mysql:mysql
-    container_name: wordpress
+      - cmsdb:cmsdb
+    container_name: cms
   cmsdb:
     image: mysql:latest
     ports:

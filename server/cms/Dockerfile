@@ -59,11 +59,7 @@ COPY index.php /var/www/html/index.php
 COPY .htaccess /var/www/html/.htaccess
 COPY wp-config.php /var/www/html/cms/wp-config.php
 
-ADD ./uploads /var/www/html/cms/wp-content/uploads/
-RUN ls -la /var/www/html/cms/wp-content/uploads/*
-
 RUN chown www-data. /var/www/html/index.php
 RUN chown www-data. /var/www/html/.htaccess
-RUN chown www-data. -R /var/www/html/cms/wp-content/uploads
 
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data

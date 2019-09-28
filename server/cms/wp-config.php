@@ -6,8 +6,8 @@ define('DB_PASSWORD', 'secrets');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 
-define('WP_SITEURL', 'https://hiroshifujita.com/cms');
-define('WP_HOME', 'https://hiroshifujita.com');
+define('WP_SITEURL', 'http://localhost:8080/cms');
+define('WP_HOME', 'http://localhost:8080');
 
 define('AUTH_KEY', '_8-^WA!pC{YWAgM (GI~hMgoEqxYi 0|%~=$XACt;A0[6G{?ThuH05MDg?f{L1#:');
 define('SECURE_AUTH_KEY', 'y{X;?u{!=DK9Ie0Cs6*V=e`Oy~[VnnT&Vx9zR3PI[.F1:k^`mUt|SfX?$El&Sv1P');
