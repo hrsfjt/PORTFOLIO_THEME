@@ -1,6 +1,8 @@
 FROM php:7.3.0-apache
+LABEL author="h-mush"
+LABEL email="fuchantoshu@gmail.com"
 
-# Init server environments
+# initialized server environments
 RUN apt-get update
 RUN apt-get install -y curl unzip libpng-dev libjpeg-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev
 RUN rm -rf /var/lib/apt/lists/*
@@ -10,7 +12,7 @@ RUN docker-php-ext-install gd mysqli opcache pdo_mysql mbstring iconv
 RUN pecl install mcrypt-1.0.2 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
-# Wordpress Core Files
+# wordpress core files
 ENV WORDPRESS_VERSION 5.2.3
 RUN curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}-ja.tar.gz"
 RUN tar -xzf wordpress.tar.gz
@@ -38,6 +40,7 @@ RUN unzip google-sitemap-generator.zip
 RUN cp -r google-sitemap-generator /var/www/html/cms/wp-content/plugins/
 RUN rm -rf google-sitemap-generator/
 RUN rm google-sitemap-generator.zip
+
 ENV WP_MULTIBYTE_PATCH_VERSION 2.8.2
 RUN curl -o wp-multibyte-patch.zip -fSL "https://downloads.wordpress.org/plugin/wp-multibyte-patch.${WP_MULTIBYTE_PATCH_VERSION}.zip"
 RUN unzip wp-multibyte-patch.zip
@@ -52,20 +55,11 @@ RUN cp -r contact-form-7 /var/www/html/cms/wp-content/plugins/
 RUN rm -rf contact-form-7/
 RUN rm contact-form-7.zip
 
-# Copy index/access files
 COPY index.php /var/www/html/index.php
 COPY .htaccess /var/www/html/.htaccess
 COPY wp-config.php /var/www/html/cms/wp-config.php
 
-# Add directory for media files
-# ADD ./uploads /var/www/html/cms/wp-content/uploads
-
-# Change owner
 RUN chown www-data. /var/www/html/index.php
 RUN chown www-data. /var/www/html/.htaccess
-RUN chown www-data. /var/www/html/cms/wp-config.php
-# RUN chown www-data. -R /var/www/html/cms/wp-content/uploads
-RUN mkdir /var/www/html/img
-RUN chown www-data. /var/www/html/img
 
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data

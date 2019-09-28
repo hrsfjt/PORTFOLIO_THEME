@@ -1,6 +1,6 @@
 version: '2'
 services:
-  wordpress:
+  cms:
     build: ./cms
     ports:
       - '8080:80'
@@ -8,10 +8,9 @@ services:
       - ../themes/portfolio:/var/www/html/cms/wp-content/themes/portfolio
       - ../themes/img:/var/www/html/img
     links:
-      - mysql:mysql
-    container_name: wordpress
-    hostname: wordpress
-  mysql:
+      - cmsdb:cmsdb
+    container_name: cms
+  cmsdb:
     image: mysql:latest
     ports:
       - '3306:3306'
@@ -21,8 +20,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secrets
-      MYSQL_DATABASE: wp_db
-      MYSQL_USER: wp_user
+      MYSQL_DATABASE: cms_db
+      MYSQL_USER: cms_user
       MYSQL_PASSWORD: secrets
-    container_name: mysql
-    hostname: mysql
+    container_name: cmsdb
