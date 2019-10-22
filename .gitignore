@@ -4,7 +4,7 @@ style.css
 
 node_modules
 
-server/mysql/*
+server/cmsdb/data/*
 
 *.zip
 *.log

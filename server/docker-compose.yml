@@ -11,11 +11,11 @@ services:
       - cmsdb:cmsdb
     container_name: cms
   cmsdb:
-    image: mysql:latest
+    build: ./cmsdb
     ports:
-      - '3306:3306'
+      - '13307:3306'
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./cmsdb/data:/var/lib/mysql
     command: '--default-authentication-plugin=mysql_native_password'
     restart: always
     environment:
