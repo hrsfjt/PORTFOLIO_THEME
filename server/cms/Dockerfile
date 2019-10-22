@@ -13,7 +13,7 @@ RUN pecl install mcrypt-1.0.2 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
 # wordpress core files
-ENV WORDPRESS_VERSION 5.2.3
+ENV WORDPRESS_VERSION 5.2.4
 RUN curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}-ja.tar.gz"
 RUN tar -xzf wordpress.tar.gz
 RUN rm wordpress.tar.gz
