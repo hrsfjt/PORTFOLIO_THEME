@@ -1,8 +1,7 @@
 FROM php:7.3.0-apache
-LABEL author="h-mush"
+LABEL author="hf-mush"
 LABEL email="fuchantoshu@gmail.com"
 
-# initialized server environments
 RUN apt-get update
 RUN apt-get install -y curl unzip libpng-dev libjpeg-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev
 RUN rm -rf /var/lib/apt/lists/*
@@ -12,7 +11,6 @@ RUN docker-php-ext-install gd mysqli opcache pdo_mysql mbstring iconv
 RUN pecl install mcrypt-1.0.2 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
-# wordpress core files
 ENV WORDPRESS_VERSION 5.2.4
 RUN curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}-ja.tar.gz"
 RUN tar -xzf wordpress.tar.gz
@@ -54,6 +52,20 @@ RUN unzip contact-form-7.zip
 RUN cp -r contact-form-7 /var/www/html/cms/wp-content/plugins/
 RUN rm -rf contact-form-7/
 RUN rm contact-form-7.zip
+
+ENV EXPORT_MEDIA_LIBRARY 2.2.0
+RUN curl -o export-media-library.zip -fSL "https://downloads.wordpress.org/plugin/export-media-library.${EXPORT_MEDIA_LIBRARY}.zip"
+RUN unzip export-media-library.zip
+RUN cp -r export-media-library /var/www/html/cms/wp-content/plugins/
+RUN rm -rf export-media-library/
+RUN rm export-media-library.zip
+
+ENV WORDPRESS_IMPORTER 0.6.4 
+RUN curl -o wordpress-importer.zip -fSL "https://downloads.wordpress.org/plugin/wordpress-importer.${WORDPRESS_IMPORTER}.zip"
+RUN unzip wordpress-importer.zip
+RUN cp -r wordpress-importer /var/www/html/cms/wp-content/plugins/
+RUN rm -rf wordpress-importer/
+RUN rm wordpress-importer.zip
 
 COPY index.php /var/www/html/index.php
 COPY .htaccess /var/www/html/.htaccess

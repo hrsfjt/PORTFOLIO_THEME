@@ -1,17 +1,18 @@
-version: '2'
+version: '3'
 services:
-  cms:
-    build: ./cms
+  cms:    
+    build:
+      context: ./cms
+      dockerfile: Dockerfile
     ports:
       - '8080:80'
     volumes:
       - ../themes/portfolio:/var/www/html/cms/wp-content/themes/portfolio
-      - ../themes/img:/var/www/html/img
     links:
       - cmsdb:cmsdb
     container_name: cms
   cmsdb:
-    build: ./cmsdb
+    image: mysql:latest
     ports:
       - '13307:3306'
     volumes:

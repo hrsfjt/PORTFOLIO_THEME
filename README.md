@@ -25,4 +25,5 @@ PORTFOLIO_THEME
 $ sh scripts/deploy
 # アップロード
 $ sh scripts/upload_theme
+> success
 ```
