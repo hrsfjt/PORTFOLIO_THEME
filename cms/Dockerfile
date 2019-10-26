@@ -71,6 +71,8 @@ COPY index.php /var/www/html/index.php
 COPY .htaccess /var/www/html/.htaccess
 COPY wp-config.php /var/www/html/cms/wp-config.php
 
+ADD themes/portfolio /var/www/html/cms/wp-content/themes/portfolio/
+
 RUN chown www-data. /var/www/html/index.php
 RUN chown www-data. /var/www/html/.htaccess
 

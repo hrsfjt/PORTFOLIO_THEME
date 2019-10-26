@@ -7,7 +7,7 @@ services:
     ports:
       - '8080:80'
     volumes:
-      - ../themes/portfolio:/var/www/html/cms/wp-content/themes/portfolio
+      - ./cms/uploads:/var/www/html/cms/wp-content/uploads
     links:
       - cmsdb:cmsdb
     container_name: cms

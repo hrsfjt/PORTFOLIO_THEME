@@ -1,12 +1,5 @@
 .DS_Store
-
-style.css
-
-node_modules
-
-server/cmsdb/data/*
-
 *.zip
-*.log
-.version
-.env
+
+cmsdb/data/*
+cms/uploads
