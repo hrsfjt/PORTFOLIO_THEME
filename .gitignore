@@ -1,5 +1,2 @@
 .DS_Store
 *.zip
-
-cmsdb/data/*
-cms/uploads
