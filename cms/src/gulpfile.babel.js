@@ -8,7 +8,7 @@ const $ = gulpLoadPlugins();
 // Base path.
 const basePath = './';
 const sassPath = basePath + 'sass/';
-const distPath = basePath + 'portfolio/';
+const distPath = basePath + '../portfolio/';
 
 const browsers = [
     '> 3%'
