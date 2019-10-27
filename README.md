@@ -12,6 +12,17 @@ PORTFOLIO_THEME
 
 ## Deploy
 
+### .env
+
+```
+$ cd cms
+$ cp .env.local .env
+$ vim .env
+...
+```
+
+### upload shell
+
 ```
 $ sh cms/upload
 >> cms upload success.
