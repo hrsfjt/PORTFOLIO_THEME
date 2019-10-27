@@ -1,6 +1,6 @@
 # PORTFOLIO_THEME
 
-PORTFOLIO_THEME
+PORTFOLIO_THEME is wordpress themes.
 
 ## Environment 
 
@@ -9,6 +9,7 @@ PORTFOLIO_THEME
 * Node v10.0.0
 * npm v6.9.0
 * PHP 7.3.0
+* Wordpress 5.2.4
 
 ## Deploy
 
