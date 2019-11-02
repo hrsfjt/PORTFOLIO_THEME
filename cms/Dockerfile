@@ -18,7 +18,7 @@ RUN rm wordpress.tar.gz
 RUN mv /var/www/html/wordpress /var/www/html/cms
 RUN chown -R www-data:www-data /var/www/html/cms
 
-ENV AKISMET_ANTI_SPAM_VERSION 4.1.2
+ENV AKISMET_ANTI_SPAM_VERSION 4.1.3
 RUN curl -o akismet.zip -fSL "https://downloads.wordpress.org/plugin/akismet.${AKISMET_ANTI_SPAM_VERSION}.zip"
 RUN unzip akismet.zip
 RUN cp -r akismet /var/www/html/cms/wp-content/plugins/

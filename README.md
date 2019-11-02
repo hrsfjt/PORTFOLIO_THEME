@@ -2,7 +2,7 @@
 
 PORTFOLIO_THEME is wordpress themes.
 
-## Environment 
+## Environment
 
 * MacOS 10.14.6 Mojave
 * zsh 5.3 (x86_64-apple-darwin18.0)
@@ -15,17 +15,16 @@ PORTFOLIO_THEME is wordpress themes.
 
 ### .env
 
-```
-$ cd cms
-$ cp .env.local .env
-$ vim .env
+```bash
+$ cp cms/.env.local cms/.env
+...
+$ vim cms/.env
 ...
 ```
 
 ### upload shell
 
-```
-$ sh cms/upload
+```bash
+$ cms/upload.sh
 >> cms upload success.
 ```
-
